@@ -6,18 +6,14 @@ router.get('/', function(req, res, next) {
   var headers = JSON.stringify(req.headers);
   var body = JSON.stringify(req.body);
   var query = JSON.stringify(req.query);
-  var resp = "GET Request at " + new Date() + "\nHeaders : " + headers + "\nBody : " + body + "\nQuery : " + query;
-  console.log(resp);
-  res.send(resp);
+  res.json({date:Date(),headers:headers,body:body, query:query});
 });
 
 router.post('/', function(req, res, next) {
-    var headers = JSON.stringify(req.headers);
-    var body = JSON.stringify(req.body);
-    var query = JSON.stringify(req.query);
-    var resp = "POST Request at " + Date.now() + "\nHeaders : " + headers + "\nBody : " + body + "\nQuery : " + query;
-    console.log(resp);
-    res.send(resp);
+    var headers = (req.headers);
+    var body = (req.body);
+    var query = (req.query);
+    res.json({date:Date(),headers:headers,body:body, query:query});
 });
 
 module.exports = router;
