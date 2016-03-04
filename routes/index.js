@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    if (req.query.access_token) {
-        console.log("<html>Hello From Jenit Shah, Access Token is </html> " + req.query.access_token);
-        res.send("<html>Hello From Jenit Shah, Access Token is </html> " + req.query.access_token)
+    if (req.body.access_token) {
+        res.send("<html>Hello From Jenit Shah, Access Token is </html> " + req.body.access_token)
     }
     else {
         res.send("<html>Hello From Jenit Shah, Code is " + req.query.code + " store hash is " + req.query.context + " scope is " + req.query.scope + "</html>");
