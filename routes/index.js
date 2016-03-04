@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   var query = JSON.stringify(req.query);
     console.log({date:Date(),headers:headers,body:body, query:query});
   //res.json({date:Date(),headers:headers,body:body, query:query});
-    res.send("<html>Hello From Jenit Shah</html>")
+    res.send("<html>Hello From Jenit Shah</html>" + req.query.code)
 });
 
 router.post('/', function(req, res, next) {
