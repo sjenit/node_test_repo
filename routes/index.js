@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
         res.send("<html>Hello From Jenit Shah, Access Token is </html> " + req.body.access_token)
     }
     else {
-        //res.send("<html>Hello From Jenit Shah, Code is " + req.query.code + " store hash is " + req.query.context + " scope is " + req.query.scope + "</html>");
-        var body = {
+        res.send("<html>Hello From Jenit Shah, Code is " + req.query.code + " store hash is " + req.query.context + " scope is " + req.query.scope + "</html>");
+        /*var body = {
             client_id:'a8dx216po0ikwmo19tchng8h4os09wc',
             client_secret:'lhtw7adzr5m10zl9b0yb3j4bpqmk2c6',
             code:'20hkbirv10wij2oqejafrknccd9iww4',
@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
                 else {
                     res.json({status: 'failure', error: 'Status Code:' + response.statusCode, error_desc:JSON.parse(body)});
                 }
-            });
+            });*/
     }
 
     //res.send("<html> req query="+JSON.parse(req.query)+" req body="+JSON.parse(req.body)+"</html>");
