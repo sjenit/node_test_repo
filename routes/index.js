@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         res.send("<html>Hello From Jenit Shah, Access Token is </html> " + req.query.access_token + )
     }
     else {
-        res.send("<html>Hello From Jenit Shah, Code is " + req.query.code + " context is " + req.query.context + " scope is " + req.query.scope + "</html>");
+        res.send("<html>Hello From Jenit Shah, Code is " + req.query.code + " store hash is " + req.query.context + " scope is " + req.query.scope + "</html>");
     }
 
 });
