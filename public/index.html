@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rapidblogs">
+
+<head>
+  <title>CreditBooks</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+  <script src = "app.js"></script>
+</head>
+
+<body style="background-color: #F7F4F4">
+<div class="navbar-fixed">
+  <nav>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo"><b>Credit</b>Books</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#/customers">Customers</a></li>
+        <li><a href="#/suppliers">Suppliers</a></li>
+        <li><a href="#/purchases">Purchases</a></li>
+        <li><a href="#/sales">Sales</a></li>
+        <li><a href="#/payments">Payments</a></li>
+        <li><a href="#/receipts">Receipts</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  <div class="container">
+  	<div ng-view="">
+      <div class="progress" ng-show="loading">
+        <div class="indeterminate"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</body>
+
+</html>
