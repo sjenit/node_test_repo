@@ -1,4 +1,4 @@
-var myApp = angular.module('rapidblogs', ["ngRoute"]);
+var myApp = angular.module('rapidblogs', ["ngRoute", "angular-loading-bar"]);
 old_data = {};
 myApp.config(function($routeProvider) {
 	$routeProvider
@@ -44,7 +44,6 @@ myApp.controller('CustomerController', ['$scope', 'dataFactory', function($scope
 
 	getCustomers();
 	function getCustomers() {
-		$scope.loading = true;
 		dataFactory.getCustomersAsync(function(result) {
 			$scope.customers = result;
 			$scope.loading = false;
