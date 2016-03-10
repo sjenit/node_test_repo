@@ -1,11 +1,18 @@
 <ul class="collection" style="margin: 20px">
   <li class="collection-item avatar" ng-repeat="cust in customers">
-    <img src="user.png" alt="" class="circle">
-    <span class="title">{{cust.name}}</span>
-    <p>{{cust.email}}<br>
-       {{cust.phone}}
-    </p>
-    <a class="secondary-content waves-effect waves-light btn">DETAILS</a>
+    <div class="row">
+      <div class="col s1">
+        <img src="user.png" alt="" class="circle">
+      </div>
+      <div class="col s11">
+        <img src="user.png" alt="" class="circle">
+        <span class="title">{{cust.name}}</span>
+        <p>{{cust.email}}<br>
+          {{cust.phone}}
+        </p>
+      </div>
+      <a class="right waves-effect waves-light btn">DETAILS</a>
+    </div>
   </li>
 </ul>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
