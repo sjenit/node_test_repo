@@ -4,10 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+var dburi="mongodb://sjenit:123@ds011409.mlab.com:11409/creditbooks";
+var db=mongoose.connect(dburi);
 
 var routes = require('./routes/index');
-
 var app = express();
+var customers = require('./routes/customers');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/customers', customers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
