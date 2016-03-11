@@ -1,22 +1,36 @@
-<ul class="collection" style="margin: 20px">
-  <li class="collection-item avatar" ng-repeat="cust in customers">
-    <div class="row">
-      <div class="col s1">
-        <img src="user.png" alt="" class="circle">
-      </div>
-      <div class="col s11">
-        <img src="user.png" alt="" class="circle">
-        <span class="title">{{cust.name}}</span>
-        <p>{{cust.email}}<br>
-          {{cust.phone}}
-        </p>
-      </div>
-      <a class="right waves-effect waves-light btn">DETAILS</a>
-    </div>
-  </li>
-</ul>
+<div class="row">
+  <div class="col s12">
+    <ul class="collection" style="margin: 20px">
+      <li class="collection-item avatar waves-effect waves-red" style="min-width: 450px" ng-repeat="cust in customers | orderBy: 'cust.name'" ng-animate="">
+        <div class="row">
+          <div class="col s1">
+            <img src="user.png" alt="" class="circle">
+          </div>
+          <div class="col s11">
+            <img src="user.png" alt="" class="circle">
+            <span class="title">{{cust.name}}</span>
+            <p>{{cust.email}}<br>
+              {{cust.phone}}
+            </p>
+          </div>
+          <!--<a class="right btn waves-effect waves-yellow" ng-click="scrollTo('modalinfo')">DETAILS</a>-->
+        </div>
+        
+      </li>
+    </ul>
+  </div>
+</div>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <a class="btn-floating btn-large green">
     <i class="large material-icons">+</i>
   </a>
+</div>
+<div id="modalinfo" class="modal">
+  <div class="modal-content">
+    <h4>hello</h4>
+    <p>hello</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-default btn-flat">Agree</a>
+  </div>
 </div>

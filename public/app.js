@@ -39,11 +39,20 @@ myApp.factory('dataFactory', ['$http', function($http) {
     };
 }]);
 
-myApp.controller('CustomerController', ['$scope', 'dataFactory', function($scope, dataFactory) {
+myApp.controller('CustomerController', ['$scope', 'dataFactory', '$anchorScroll', '$location', '$log', function($scope, dataFactory, $anchorScroll, $location, $log) {
 	$scope.customers;
+	$scope.hello = "hello";
+
+	$scope.scrollTo = function(id) {
+		$log.log("called with " + id);
+		$location.hash(id);
+		$anchorScroll();
+		$('.modalinfo').openModal();
+	};
 
 	getCustomers();
 	function getCustomers() {
+		console.log("hello");
 		dataFactory.getCustomersAsync(function(result) {
 			$scope.customers = result;
 			$scope.loading = false;
@@ -51,3 +60,7 @@ myApp.controller('CustomerController', ['$scope', 'dataFactory', function($scope
 	}
 }]);
 
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+});
