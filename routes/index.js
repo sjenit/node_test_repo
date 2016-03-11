@@ -6,8 +6,9 @@ router.get('/', function(req, res, next) {
     res.sendfile(__dirname+'/public/index.html');
 });
 
-router.get('/zapier', function(req, res, next) {
-    res.json({
+router.get('/zapier/:cont_id', function(req, res, next) {
+    if (req.params.cont_id == 91) {
+        res.json({
             "id": 91,
             "name": "A R S Wooden Flooring",
             "email": "amit.mital@frama.in",
@@ -15,7 +16,12 @@ router.get('/zapier', function(req, res, next) {
             "designation": "",
             "photo": "",
             "imagePath": "http://stagingnew1.mysoulcrm.com/emails/mailAttachments/"
-    });
+        });
+    }
+    else {
+        res.send(400);
+    }
+
 });
 
 router.get('/bigcomm', function(req, res) {
