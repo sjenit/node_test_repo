@@ -6,6 +6,18 @@ router.get('/', function(req, res, next) {
     res.sendfile(__dirname+'/public/index.html');
 });
 
+router.get('/zapier', function(req, res, next) {
+    res.json({
+            "id": 91,
+            "name": "A R S Wooden Flooring",
+            "email": "amit.mital@frama.in",
+            "mobile": "9810095400",
+            "designation": "",
+            "photo": "",
+            "imagePath": "http://stagingnew1.mysoulcrm.com/emails/mailAttachments/"
+    });
+});
+
 router.get('/bigcomm', function(req, res) {
     console.log("new request...");
     if (req.body.access_token) {
